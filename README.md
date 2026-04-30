@@ -1,42 +1,69 @@
-# RAG-Based Question Answering System
+# RAG Practice: ChromaDB & Pinecone
 
-This is a practice project based on Retrieval-Augmented Generation (RAG) using OpenAI Embeddings, LangChain, and Pinecone Vector Database.
+This repository contains my **practice work on Retrieval-Augmented Generation (RAG)** using LangChain and OpenAI.
 
-The purpose of this project is to understand how a Question Answering system works with PDF documents by retrieving accurate answers using similarity search instead of generating random responses.
+In this project, I implemented the same RAG pipeline using **two different vector databases separately**:
 
-## Project Workflow
+* ChromaDB (local)
+* Pinecone (cloud)
 
-PDF Upload → Text Extraction → Text Chunking → Vector Embeddings → Pinecone Storage → Similarity Search → Final Answer Generation
+The goal is to understand how vector databases work in a Question Answering system.
 
-## Features
+---
 
-* PDF document loading and processing
-* Text chunking using RecursiveCharacterTextSplitter
-* OpenAI Embeddings generation
-* Pinecone Vector Database integration
-* Similarity search for relevant document retrieval
-* RetrievalQA chain for answer generation
-* Interactive chatbot loop for user queries
+## 🚀 What I Practiced
 
-## Technologies Used
+* Loading documents (TXT / PDF)
+* Splitting text into chunks
+* Creating embeddings using OpenAI
+* Storing embeddings in:
 
-* Python
-* LangChain
-* OpenAI API
-* Pinecone
-* PyPDF
-* Jupyter Notebook
-* VS Code
+  * ChromaDB (local)
+  * Pinecone (cloud)
+* Retrieving relevant chunks using similarity search
+* Generating answers using RetrievalQA
 
-## Required Packages
+---
 
-```bash id="e3p7tk"
+## 🔁 Workflow
+
+Documents → Text Splitting → Embeddings → Vector DB → Retrieval → LLM → Answer
+
+---
+
+## 📂 Files in This Repo
+
+* `chroma_db.ipynb` → RAG using ChromaDB (local)
+* `pinecone_vector_db.ipynb` → RAG using Pinecone (cloud)
+
+Both notebooks implement the same logic, only the vector database is different.
+
+---
+
+## ⚙️ Key Difference Practiced
+
+**ChromaDB**
+
+* Runs locally
+* No API key needed
+* Good for testing
+
+**Pinecone**
+
+* Cloud-based
+* Requires API key
+* Used in production systems
+
+---
+
+## 📦 Required Packages
+
+```bash
 pip install langchain
 pip install langchain-openai
-pip install langchain-pinecone
 pip install langchain-community
-pip install langchain-core
 pip install langchain-text-splitters
+pip install chromadb
 pip install pinecone
 pip install pypdf
 pip install openai
@@ -44,37 +71,36 @@ pip install tiktoken
 pip install python-dotenv
 ```
 
-## Environment Variables
+---
 
-Create a `.env` file and add:
+## 🔐 Environment Variables
 
-```env id="d9s4jq"
+Create a `.env` file:
+
+```env
 OPENAI_API_KEY=your_openai_api_key
 PINECONE_API_KEY=your_pinecone_api_key
 ```
 
-## Example Query
+---
 
-What is Transformer?
+## 💬 Example Queries
 
-## Example Output
+* What is artificial intelligence?
+* How much funding did Microsoft raise?
 
-The Transformer is a transduction model that uses self-attention to compute representations of its input and output without using recurrence or convolution.
+---
 
-## Purpose of the Project
+## 🎯 Purpose
 
-This project is created for practice and learning purposes to understand the complete workflow of RAG architecture using vector databases and LLM-based retrieval systems.
+This is a **learning project** to understand:
 
-It helps in learning how PDF-based intelligent question answering systems are built in real-world AI applications.
+* How RAG works
+* How vector databases store embeddings
+* Difference between local and cloud vector databases
 
-## Future Improvements
+---
 
-* Multi-PDF support
-* Web interface using Streamlit
-* Chat history support
-* Source reference display
-* Better response optimization
-
-## Author
+## 👨‍💻 Author
 
 Md Danish Alam
