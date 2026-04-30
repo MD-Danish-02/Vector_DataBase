@@ -86,7 +86,7 @@ PINECONE_API_KEY=your_pinecone_api_key
 
 ## 💬 Example Queries
 
-* What is artificial intelligence?
+* What is Encoder?
 * How much funding did Microsoft raise?
 
 ---
